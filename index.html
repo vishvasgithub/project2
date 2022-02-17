@@ -1,0 +1,162 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background-color: crimson;
+            padding: 30%;
+            padding-top: 20%;
+            font-size: 18px;
+        }
+
+        .area {
+            padding: 23%;
+            background-color: darkblue;
+            color: white;
+            border-radius: 20%;
+        }
+
+        .sttings {
+            padding: 20px;
+        }
+
+        .setting {
+            margin: 3px;
+            padding: 4px;
+        }
+
+        input[type="checkbox"] {
+            width: 40px;
+            height: 20px;
+            background-color: red;
+            -webkit-appearance: none;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        input[type="checkbox"]:checked {
+            width: 40px;
+            height: 20px;
+            background-color: green;
+            -webkit-appearance: none;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        input[type="checkbox"]::before {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        input:checked[type="checkbox"]::before {
+            margin-left: 20px;
+            transition: 0.3s;
+        }
+
+        #generate {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background-color: pink;
+            color: black;
+        }
+
+        input[type="number"] {
+            width: 50px;
+            height: 30px;
+            border: none;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .result-container {
+            background-color: white;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            position: relative;
+            font-size: 15px;
+            letter-spacing: 1px;
+            padding: 12px 10px;
+            height: 25px;
+            width: 120%;
+            border-radius: 10px;
+        }
+
+        .result-container #result {
+            width: 100%;
+            color: black;
+        }
+
+        .result-container .btn {
+            width: 40px;
+            border: none;
+            height: 40px;
+            background-color: pink;
+            border-radius: 10px;
+        }
+
+        .btn:hover {
+            transform: scale(1.5);
+            cursor: pointer;
+        }
+    </style>
+
+    <script src="pass.js" defer></script>
+</head>
+
+<body>
+    <div class="area">
+        <h2 style="text-align:center;width:121%;">Password Generator</h2>
+
+        <div class="result-container">
+            <span id="result"></span>
+            <button class="btn" id="clipboard">
+			<i class="fa fa-clipboard" style="font-size:24px;"></i>
+		</button>
+        </div>
+
+        <div class="settings" style="text-align:right;width:129%">
+            <div class="setting">
+                <label>Password Length(Max:20)</label>
+                <input type="number" id="length" min="4" max="20" value="20" />
+            </div>
+            <div class="setting">
+                <label>Include uppercase letters</label>
+                <input type="checkbox" id="uppercase" / checked class="toggle">
+            </div>
+            <div class="setting">
+                <label>Include lowercase letters</label>
+                <input type="checkbox" id="lowercase" checked class="toggle" />
+            </div>
+            <div class="setting">
+                <label>Include numbers</label>
+                <input type="checkbox" id="numbers" checked class="toggle" />
+            </div>
+            <div class="setting">
+                <label>Include symbols</label>
+                <input type="checkbox" id="symbols" checked class="toggle" />
+            </div>
+        </div>
+        <button class="btn" id="generate" style="text-align:center;position:absolute;width:26%;height:30px;">
+			Generate Password
+		</button>
+    </div>
+</body>
+
+</html>
